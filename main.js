@@ -56,4 +56,8 @@ const fetchIssues = () => {
                               <a href="#" onclick="deleteIssue(${id})" class="btn btn-danger">Delete</a>
                               </div>`;
 	}
+
+	const openIssues = issues.filter((issue) => issue.status != "Closed");
+	document.getElementById("open-issue").innerText = openIssues.length;
+	document.getElementById("total-issue").innerText = issues.length;
 };
